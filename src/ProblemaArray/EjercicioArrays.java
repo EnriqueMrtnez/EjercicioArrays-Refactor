@@ -10,7 +10,6 @@ public class EjercicioArrays {
         int maxNota = -1;
         int minNota = 11;
 
-        // --- Bloque del Commit 2 mejorado ---
         for(int i=0; i < control.length; i++){
             control[i] = (int)(Math.random()*11);
             if (control[i] > maxNota) maxNota = control[i];
@@ -56,5 +55,10 @@ public class EjercicioArrays {
         
         System.out.println("Relación Aprobados: " + aprobados);
         System.out.println("Relación Suspensos: " + suspensos);
+        
+        double[] calif31 = new double[40];
+        for (int i = 0; i < 31; i++) calif31[i] = Math.random() * 11;
+        calif31[3] = 6;
+        System.out.println("Nota actualizada alumno 4: " + calif31[3]);
     }
 } 
