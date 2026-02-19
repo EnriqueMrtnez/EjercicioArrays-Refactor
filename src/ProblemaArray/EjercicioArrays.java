@@ -9,6 +9,7 @@ public class EjercicioArrays {
         int maxNota = -1;
         int minNota = 11;
 
+        // --- Bloque del Commit 2 mejorado ---
         for(int i=0; i < control.length; i++){
             control[i] = (int)(Math.random()*11);
             if (control[i] > maxNota) maxNota = control[i];
@@ -20,5 +21,25 @@ public class EjercicioArrays {
         System.out.println("Índice Mín: " + (notas.indexOf(minNota) + 1));
         System.out.println("Índice Máx: " + (notas.indexOf(maxNota) + 1));
         System.out.println("Notas: " + notas);
+        
+        int[] practicas = new int[numAlumnos];
+        float[] calificaciones = new float[numAlumnos];
+
+        for(int i = 0; i < numAlumnos; i++){
+            practicas[i] = (int)(Math.random()*11);
+            calificaciones[i] = (control[i] + (float)practicas[i]) / 2.0f;
+        }
+
+        System.out.println("\n--- ESTADÍSTICAS ---");
+        for (int i = 0; i < 10; i++){
+            int count = 0;
+            for (int j = 0; j < numAlumnos; j++) {
+                if (calificaciones[j] > i && calificaciones[j] <= (i + 1)) {
+                    count++;
+                }
+            }
+            float porcentaje = (count * 100.0f) / numAlumnos;
+            System.out.println("Tramo <= " + (i+1) + ": " + porcentaje + "%");
+        }
     }
-}
+} 
