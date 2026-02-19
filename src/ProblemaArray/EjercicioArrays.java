@@ -1,6 +1,7 @@
 package ProblemaArray;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 public class EjercicioArrays {
     public static void main(String[] args) {
@@ -41,5 +42,19 @@ public class EjercicioArrays {
             float porcentaje = (count * 100.0f) / numAlumnos;
             System.out.println("Tramo <= " + (i+1) + ": " + porcentaje + "%");
         }
+        
+        List<Integer> aprobados = new ArrayList<>();
+        List<Integer> suspensos = new ArrayList<>();
+
+        for (int i = 0; i < numAlumnos; i++) {
+            if (calificaciones[i] >= 5) {
+                aprobados.add(i + 1);
+            } else {
+                suspensos.add(i + 1);
+            }
+        }
+        
+        System.out.println("Relación Aprobados: " + aprobados);
+        System.out.println("Relación Suspensos: " + suspensos);
     }
 } 
